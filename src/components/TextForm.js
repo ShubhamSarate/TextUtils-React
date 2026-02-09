@@ -51,10 +51,10 @@ export default function TextForm(props) {
         </div>
         <div className="d-flex align-items-center">
             <button className="btn btn-primary me-1" onClick={clickUpper}>
-            Convert to Upper-case
+            UpperCase
           </button>
           <button className="btn btn-primary me-1" onClick={clickLower}>
-            Convert to Lower-case
+            LowerCase
           </button>
           <button className="btn btn-primary me-1" onClick={clickCopy}>
             Copy
