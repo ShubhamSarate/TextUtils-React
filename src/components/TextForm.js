@@ -18,6 +18,7 @@ export default function TextForm(props) {
 
     const clickCopy = () => {
       navigator.clipboard.writeText(text);
+      props.showAlert("Text Copy to your clipboard !","success")
     }
 
     const clickRemovespace = () =>{
@@ -53,19 +54,19 @@ export default function TextForm(props) {
           ></textarea>
         </div>
         <div className="d-flex align-items-center">
-            <button className="btn btn-primary me-1 my-1" onClick={clickUpper}>
+            <button disabled={text.length===0}className="btn btn-primary me-1 my-1" onClick={clickUpper}>
             UpperCase
           </button>
-          <button className="btn btn-primary me-1 my-1" onClick={clickLower}>
+          <button disabled={text.length===0}className="btn btn-primary me-1 my-1" onClick={clickLower}>
             LowerCase
           </button>
-          <button className="btn btn-primary me-1 my-1" onClick={clickCopy}>
+          <button disabled={text.length===0}className="btn btn-primary me-1 my-1" onClick={clickCopy}>
             Copy
           </button>
-          <button className="btn btn-primary me-1 my-1" onClick={clickRemovespace}>
+          <button disalbed={text.length===0}className="btn btn-primary me-1 my-1" onClick={clickRemovespace}>
             Remove Extra-Spaces
           </button>
-          <button className="btn btn-danger me-1 my-1" onClick={clickClear}>
+          <button disabled={text.length===0}className="btn btn-danger me-1 my-1" onClick={clickClear}>
             Clear
           </button>
         </div>
