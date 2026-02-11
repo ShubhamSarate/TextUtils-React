@@ -17,10 +17,13 @@ export default function TextForm(props) {
     }
 
     const clickCopy = () => {
-      const text = document.getElementById("myBox");
-      text.select();
-      navigator.clipboard.writeText(text.value);
-      props.showAlert("Text copied to your clipboard !","success");
+      navigator.clipboard.writeText(text);
+    }
+
+    const clickRemovespace = () =>{
+      let newText = text.split(/[ ]+/);
+        setText(newText.join(" "));
+        props.showAlert("Extra spaces removed !", "success");
     }
 
     const clickClear = () => {
@@ -45,31 +48,34 @@ export default function TextForm(props) {
         <div className="mb-3" > 
           <textarea className="form-control" id="myBox"
             rows="8" value={text} onChange={changeState}
-            style={{backgroundColor : props.mode === 'light' ? 'grey' : 'white' , color : props.mode === 'light' ? 'white' : 'black'}}
+            style={{backgroundColor : props.mode === 'light' ? 'white' : '#13466e' , color : props.mode === 'light' ? 'black' : 'white'}}
             placeholder='Enter Text here'
           ></textarea>
         </div>
         <div className="d-flex align-items-center">
-            <button className="btn btn-primary me-1" onClick={clickUpper}>
+            <button className="btn btn-primary me-1 my-1" onClick={clickUpper}>
             UpperCase
           </button>
-          <button className="btn btn-primary me-1" onClick={clickLower}>
+          <button className="btn btn-primary me-1 my-1" onClick={clickLower}>
             LowerCase
           </button>
-          <button className="btn btn-primary me-1" onClick={clickCopy}>
+          <button className="btn btn-primary me-1 my-1" onClick={clickCopy}>
             Copy
           </button>
-          <button className="btn btn-danger me-1" onClick={clickClear}>
+          <button className="btn btn-primary me-1 my-1" onClick={clickRemovespace}>
+            Remove Extra-Spaces
+          </button>
+          <button className="btn btn-danger me-1 my-1" onClick={clickClear}>
             Clear
           </button>
         </div>
     </div>
     <div style={{color : props.mode === 'light' ? 'black' : 'white'}}>
     <div className='container my-3'>
-      {text.split(" ").length-1} words and {text.length} letters
+      {text.split(/\s+/).filter((ele)=>{return ele.length!==0}).length} words and {text.length} letters
     </div>
     <div className='container my-3'>
-      Takes time to read {0.08 * (text.split(" ").length-1)} minutes
+      Takes time to read {0.008 * (text.split(" ").filter((ele)=>{return ele.length !== 0}).length)} minutes
     </div>
     <h2>Preview</h2>
     <h4>{text.length > 0 ? text : "Write text above to preview here"}</h4>

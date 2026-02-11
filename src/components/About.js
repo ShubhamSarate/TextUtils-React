@@ -1,35 +1,12 @@
-import React,{useState} from 'react'
+// import React,{useState} from 'react'
 
-export default function About() {
+export default function About(props) {
 
-    const [mystyle,setMyStyle] = useState({
-        backgroundColor : 'white',
-        color : 'black',
-        padding : '2rem',
-    })
-
-    const [btnText,setBtnText] = useState("Dark Mode");
-
-    const handleBg = () => {
-        if(mystyle.backgroundColor === 'white'){
-            setMyStyle({
-                backgroundColor : 'black',
-                color : 'white',
-                padding : '2rem',
-            })
-
-            setBtnText("Light Mode");
-        }
-        else{
-            setMyStyle({
-                backgroundColor : 'white',
-                color : 'black',
-                padding : '2rem',
-            })
-
-            setBtnText("Dark Mode");
-        }
+    let mystyle = {
+      color : props.mode === 'dark' ? 'white' : 'black',
+      backgroundColor : props.mode === 'dark' ? '#042743' : 'white'
     }
+
 
   return (
     <>
@@ -39,41 +16,40 @@ export default function About() {
   <div className="accordion-item">
     <h2 className="accordion-header" >
       <button className="accordion-button" style={mystyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Accordion Item #1
+        <strong>Why TextUtils</strong>
       </button>
     </h2>
     <div id="collapseOne" style={mystyle} className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
       <div className="accordion-body">
-        <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+        TextUtils is a simple and powerful text utility tool designed to make working with text fast and effortless. Whether you want to analyze, format, or transform text, TextUtils helps you get it done in just a few clicks.It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of
       </div>
     </div>
   </div>
   <div className="accordion-item">
     <h2 className="accordion-header">
       <button className="accordion-button collapsed" style={mystyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Accordion Item #2
+        <strong>What We Do</strong>
       </button>
     </h2>
     <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample" style={mystyle}>
       <div className="accordion-body">
-        <strong>This is the second item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+        We provide useful text features like word counting, character counting, case conversion, and text cleanup. Our goal is to save your time by offering quick, accurate, and easy-to-use text tools in one place. It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>https://shubhamsarate.github.io/TextUtils-React/</code> though the transition does limit overflow.
       </div>
     </div>
   </div>
   <div className="accordion-item">
     <h2 className="accordion-header">
       <button className="accordion-button collapsed" style={mystyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Accordion Item #3
+        <strong>Our Mission</strong>
       </button>
     </h2>
     <div id="collapseThree" style={mystyle} className="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div className="accordion-body">
-        <strong>This is the third item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+        Our mission is to create a lightweight, user-friendly platform that helps students, developers, writers, and professionals handle text more efficiently. We focus on simplicity, speed, and a smooth user experience. It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>textutils.world</code> though the transition does limit overflow.
       </div>
     </div>
   </div>
 </div>
-<button className='btn btn-primary my-2' onClick={handleBg}>{btnText}</button>
 </div>
 </>
   )
