@@ -65,10 +65,10 @@ npm start
 
 ## 📸 Screenshots
 
-### Main Page
+### White Page
 ![White_Mode](./assets/White.jpg)
 
-### Scroll-down Mode
+### Dark Mode
 ![Dark_Mode](./assets/Dark.jpg)
 
 ---
