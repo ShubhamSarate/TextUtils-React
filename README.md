@@ -65,7 +65,7 @@ npm start
 
 ## 📸 Screenshots
 
-### White Page
+### White Mode
 ![White_Mode](./assets/White.jpg)
 
 ### Dark Mode
