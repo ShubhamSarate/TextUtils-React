@@ -63,6 +63,16 @@ npm start
 
 ---
 
+## 📸 Screenshots
+
+### Main Page
+![White_Mode](./assets/White.jpg)
+
+### Scroll-down Mode
+![Dark_Mode](./assets/Dark.jpg)
+
+---
+
 ## 🌐 Usage
 
 1. Enter your text in the input box
